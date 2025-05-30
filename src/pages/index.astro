@@ -19,9 +19,9 @@
 
       .sticker {
         position: absolute;
-        animation: float 6s infinite ease-in-out;
+        animation: float 20s infinite ease-in-out;
         pointer-events: none;
-        width: 42px;
+        width: 60px;
       }
 
       @keyframes float {
@@ -30,7 +30,7 @@
           transform: translateY(0px) rotate(0deg);
         }
         50% {
-          transform: translateY(-6px) rotate(3deg);
+          transform: translateY(-6px) rotate(180deg);
         }
       }
 
@@ -57,7 +57,7 @@
     </style>
   </head>
   <body>
-    <!-- Sticker 4–34 verteilt, kleiner gemacht -->
+    <!-- Sticker 4–34 mit größerer Breite -->
     <img src="/assets/4.webp" class="sticker" style="top: 5%; left: 5%;" />
     <img src="/assets/5.webp" class="sticker" style="top: 5%; left: 30%;" />
     <img src="/assets/6.webp" class="sticker" style="top: 5%; left: 60%;" />
