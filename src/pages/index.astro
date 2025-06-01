@@ -112,11 +112,28 @@
     <img src="/assets/33.webp" class="sticker" style="top: 45%; left: 80%;" />
     <img src="/assets/34.webp" class="sticker" style="top: 10%; left: 50%;" />
 
+    <audio id="bgMusic" loop>
+      <source src="/assets/hbd.mp3" type="audio/mpeg" />
+      Dein Browser unterstützt kein Audio.
+    </audio>
+
     <main>
-      <button class="button">
+      <button class="button" id="playButton">
         <img src="/assets/cat2.png" alt="katzerl" width="50" />
-        <p>Drücken mich</p>
+        <p>Drück mich</p>
       </button>
     </main>
+    <script>
+      const playBtn = document.getElementById("playButton");
+      const bgMusic = document.getElementById(
+        "bgMusic"
+      ) as HTMLAudioElement | null;
+
+      playBtn?.addEventListener("click", () => {
+        bgMusic?.play().catch((err) => {
+          console.error("Fehler beim Abspielen der Musik:", err);
+        });
+      });
+    </script>
   </body>
 </html>
