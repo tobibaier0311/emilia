@@ -1,0 +1,93 @@
+---
+const imageCount = 11;
+// Keine serverseitige Logik notwendig, da alles im Client passiert
+---
+
+<style>
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .popup-overlay.active {
+    display: flex;
+  }
+
+  .popup-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .popup-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.6rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+
+<div>
+  <button class="button" id="openPopupBtn">Mich auch</button>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <button class="close-button" id="closePopupBtn">&times;</button>
+      <img id="popupImage" src="/assets/sleep1.JPG" alt="Zufälliges Bild" />
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  const imageCount = 11;
+  const button = document.getElementById("openPopupBtn");
+  const overlay = document.getElementById("popupOverlay");
+  const closeBtn = document.getElementById("closePopupBtn");
+  const img = document.getElementById("popupImage");
+
+  button?.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * imageCount) + 1;
+    img.src = `/assets/sleep${randomIndex}.JPG`;
+    overlay.classList.add("active");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    overlay.classList.remove("active");
+  });
+
+  // Optional: Klick außerhalb des Bilds schließt das Popup
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove("active");
+    }
+  });
+</script>
