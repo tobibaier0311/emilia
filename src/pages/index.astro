@@ -2,7 +2,7 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Happy Birthday 🎉</title>
+    <title>🫶🫶🫶🫶🫶🫶</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
@@ -17,20 +17,32 @@
         position: relative;
       }
 
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
       .sticker {
         position: absolute;
-        animation: float 30s infinite ease-in-out;
+        animation: float 10s infinite ease-in-out;
         pointer-events: none;
         width: 60px;
+      }
+
+      .button {
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
       }
 
       @keyframes float {
         0%,
         100% {
-          transform: translateY(0px) rotate(0deg);
+          transform: translateY(0px);
         }
         50% {
-          transform: translateY(-6px) rotate(65deg);
+          transform: translateY(20px);
         }
       }
 
@@ -85,7 +97,6 @@
     <img src="/assets/23.webp" class="sticker" style="top: 80%; left: 40%;" />
     <img src="/assets/24.webp" class="sticker" style="top: 80%; left: 70%;" />
 
-    <img src="/assets/25.webp" class="sticker" style="top: 90%; left: 20%;" />
     <img src="/assets/26.webp" class="sticker" style="top: 90%; left: 50%;" />
     <img src="/assets/27.webp" class="sticker" style="top: 90%; left: 80%;" />
 
@@ -98,7 +109,12 @@
     <img src="/assets/34.webp" class="sticker" style="top: 10%; left: 50%;" />
 
     <main>
-      <button>
+      <audio autoplay loop hidden>
+        <source src="/assets/hbd.mp3" type="audio/mpeg" />
+        Dein Browser unterstützt keine Audio-Wiedergabe.
+      </audio>
+
+      <button class="button">
         <img src="/assets/cat2.png" alt="katzerl" width="50" />
         <p>Drück mich</p>
       </button>
