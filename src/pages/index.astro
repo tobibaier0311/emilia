@@ -27,6 +27,11 @@ import RandomImage from "../components/RandomImage.astro";
         height: 100%;
       }
 
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
       .sticker {
         position: absolute;
         animation: float 10s infinite ease-in-out;
@@ -35,8 +40,20 @@ import RandomImage from "../components/RandomImage.astro";
       }
 
       .button {
-        background-color: rgba(0, 0, 0, 0.5);
+        width: 150px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: white;
+        background-color: #333;
         cursor: pointer;
+        text-decoration: none;
+        border: none;
+        border-radius: 8px;
       }
 
       main {
@@ -78,6 +95,12 @@ import RandomImage from "../components/RandomImage.astro";
         transform: scale(0.8);
         animation: pop 0.5s forwards;
         color: rgb(239, 0, 244);
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
 
       @keyframes pop {
@@ -206,20 +229,16 @@ import RandomImage from "../components/RandomImage.astro";
     </div>
 
     <main>
-      <button class="button" id="playButton">
-        <img src="/assets/cat2.png" alt="katzerl" width="50" />
-        <p style="color: white;">Drück mich</p>
+      <div class="buttons">
+        <button class="button" id="playButton">
+          <img src="/assets/cat2.png" alt="katzerl" height="70" />
+          <p style="color: white;">Drück mich</p>
+        </button>
         <RandomImage />
-      </button>
-      <button><a href="/card">Dann mich hihihi</a></button>
-
-      <!-- Neue Buttons unten -->
-      <div
-        style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem;"
-      >
-        <button class="button" onclick="alert('🎉 Hier ist deine Karte!')"
-          >Karte</button
-        >
+        <button class="button">
+          <img src="/assets/cat4.png" alt="Ginger Katze" height="50" />
+          <a href="/card">Und dann mich hihihi</a>
+        </button>
       </div>
     </main>
 
