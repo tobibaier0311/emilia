@@ -34,9 +34,22 @@ import RandomImage from "../components/RandomImage.astro";
 
       .sticker {
         position: absolute;
-        animation: float 10s infinite ease-in-out;
-        pointer-events: none;
         width: 80px;
+        pointer-events: none;
+        opacity: 0.8;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(3deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
       }
 
       .button {
